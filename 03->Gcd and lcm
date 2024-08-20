@@ -1,0 +1,23 @@
+class Solution {
+  public:
+  long long getGcd(long A,long B){
+      while(A>0 && B>0){
+          if(A>B){
+              A=A%B;
+          }
+          else{
+              B=B%A;
+          }
+      }
+      return (A==0)?B:A;
+  }
+  long long getLcm(long long reqGcd,long long A,long long B){
+      return (A/reqGcd)*B;
+  }
+    vector<long long> lcmAndGcd(long long A , long long B) {
+        // code here
+        long long reqGcd=getGcd(A,B);
+        long long reqLcm=getLcm(reqGcd,A,B);
+        return {reqLcm,reqGcd};
+    }
+};
