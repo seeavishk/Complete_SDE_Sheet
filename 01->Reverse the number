@@ -1,0 +1,16 @@
+class Solution{
+public:
+    int evenlyDivides(int N){
+        //code here
+        int cnt=0;
+        int res=N;
+        while(N>0){
+            int num=N%10;
+            if(num!=0 && res%num==0){
+                cnt++;
+            }
+            N=N/10;
+        }
+        return cnt;
+    }
+};
